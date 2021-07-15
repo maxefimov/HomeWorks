@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	int number, columns;
+	/*int number, columns;
 	cout << "Input number: ";
 	cin >> number;
 	cout << "Input columns: ";
@@ -23,7 +23,32 @@ int main()
 	}
 	for (int col = 1; col <= rowRest; col++)
 		cout << (rowsFull + 1) * col << "\t";
-	cout << "\n";
+	cout << "\n";*/
+
+	int widthBoard, widthCell;
+	cout << "Input width of board: ";
+	cin >> widthBoard;
+	cout << "Input width of cell: ";
+	cin >> widthCell;
+
+	bool order{ false };
+	for (int rowBoard = 0; rowBoard < widthBoard; rowBoard++)
+	{
+		for (int rowCell = 0; rowCell < widthCell; rowCell++)
+		{
+			for (int colBoard = 0; colBoard < widthBoard; colBoard++)
+			{
+				for (int colCell = 0; colCell < widthCell; colCell++)
+				{
+					cout << ((order) ? (char)32 : (char)176);
+					cout << ((order) ? (char)32 : (char)176);
+				}
+				order = !order;
+			}
+			cout << "\n";
+		}
+		order = !order;
+	}
 
 	return 0;
 }
